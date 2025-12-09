@@ -14,7 +14,7 @@ import pandas as pd
 data ={
     "Séquence": ["ATGCGTACGTA","GCTAGCTAGGCC","TAGCGCGTAAGT","TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"],
     "Longueur": [12,12,12,10,11,10,10],
-    "Pourcentage GC": [50,60.67,58.33,40,45.45,60,50]
+    "Pourcentage GC": [50,66.67,58.33,40,45.45,60,50]
 }
 
 # Création d'un DataFrame (tableau pandas)
@@ -49,5 +49,15 @@ print("****************Ajoute d'une nouvelle colonne***************")
 # Ajouter une nouvelle colonne"Catégorie GC"
 df["Catégorie GC"] = df["Pourcentage GC"].apply(lambda x: "Riche" if x > 55 else "Moyen" if 45 < x <55 else "Faible")
 print(df,"\n\n")
-#5) Ajouter une colonne comptant les 'G' df["Nombre de G"]=df["Séquence "].Str.Count ("G") print("===== Nombre de G ajoutés=====") print (df",\n\n")
- #6) Calculer l'écart type de pourcentage GC et de longueur écarttype_ gc=df["pourcentage GC"].Std()écartype_long =df[longeur"].Std()print ("=====Écart type de pourcentage GC:",écarttype_gc) Print("Écart type de longueur:",écarttype_long) Print (df,"n\n")
+
+#5) Ajouter une colonne comptant les 'G' 
+df["Nombre de G"] = df["Séquence"].str.count ("G") 
+print("===== Nombre de G ajoutés =====") 
+print (df,"\n\n")
+
+ #6) Calculer l'écart type de pourcentage GC et de longueur
+écarttype_ gc = df["pourcentage GC"].std()
+écartype_long = df["Longueur"].Std()
+print ("===== Écart type de pourcentage GC:",écarttype_gc)
+print("Écart type de longueur:",écarttype_long)
+print (df,"n\n")
