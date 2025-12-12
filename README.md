@@ -1,68 +1,68 @@
-# project-1-
-it's the first project for try
-#Pandas with Ouazani Hadil 
-#for Biochimie Master Tlemcen...06/12/2025
-#the project members :
-#Allouche Ikram 
-#Haimour Nourhene 
-#Sabri Amel 
-#Sidi Ikhlef Mortada 
+# project-1- 
+it's the first project for try 
+#Pandas with Ouazani Hadil  
+#for Biochimie Master  Tlemcen...06/12/2025 
+#the project members : 
+#Allouche Ikram  
+#Haimour Nourhene  
+#Sabri Amel  
+#Sidi Ikhlef Mortada  
 
-import pandas as pd
+import pandas as pd 
 
-#Données : Séquence ADN, Longueur, Pourcentage de GC 
+#Données : Séquence ADN, Longueur, Pourcentage de GC  
 data ={
-    "Séquence": ["ATGCGTACGTA","GCTAGCTAGGCC","TAGCGCGTAAGT","TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"],
-    "Longueur": [12,12,12,10,11,10,10],
-    "Pourcentage GC": [50,66.67,58.33,40,45.45,60,50]
+    "Séquence": ["ATGCGTACGTA","GCTAGCTAGGCC","TAGCGCGTAAGT","TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"], 
+    "Longueur": [12,12,12,10,11,10,10], 
+    "Pourcentage GC": [50,66.67,58.33,40,45.45,60,50] 
 }
 
-# Création d'un DataFrame (tableau pandas)
-df = pd.DataFrame(data)
-print("****************Création et affichage****************")
+# Création d'un DataFrame (tableau pandas) 
+df = pd.DataFrame(data) 
+print("****************Création et affichage****************") 
 
-# Affichage du tableau 
+# Affichage du tableau  
 print ("Tableau des séquences ADN:")
-print(df,"\n\n")
+print(df,"\n\n") 
 
-#Opérations sur les tableaux :
-print("**************** Opération ****************")
+#Opérations sur les tableaux : 
+print("**************** Opération ****************") 
 
-#1) Sélectionner la colonne "Longueur"
-longueur = df["Longueur"]
-print(longueur,"\n\n")
+#1) Sélectionner la colonne "Longueur" 
+longueur = df["Longueur"] 
+print(longueur,"\n\n") 
 
-#2) Filtrer les séquences dont la longueur supérieur à 10
-print("**************** Filtrage dont la longueur ****************")
-# Filtrer les séquences dont la longueur supérieur à 10 
-filtred_df = df[df["Longueur"] > 10]
-print(filtred_df,"\n\n")
+#2) Filtrer les séquences dont la longueur supérieur à 10 
+print("**************** Filtrage dont la longueur ****************") 
+# Filtrer les séquences dont la longueur supérieur à 10  
+filtred_df = df[df["Longueur"] > 10] 
+print(filtred_df,"\n\n") 
 
-#3) Calculer la moyenne du pourcentage de GC 
-print("**************** Calcul de la moyenne ****************")
-# Calculer la moyenne du pourcentage de GC 
-average_gc = df["Pourcentage GC"].mean()
-print(f"Pourcentage moyen de GC : {average_gc:.3f}%","\n\n")
+#3) Calculer la moyenne du pourcentage de GC  
+print("**************** Calcul de la moyenne ****************") 
+# Calculer la moyenne du pourcentage de GC  
+average_gc = df["Pourcentage GC"].mean() 
+print(f"Pourcentage moyen de GC : {average_gc:.3f}%","\n\n") 
 
-#4) Ajouter une nouvelle colonne avec des calculs 
-print("****************Ajoute d'une nouvelle colonne***************")
-# Ajouter une nouvelle colonne"Catégorie GC"
-df["Catégorie GC"] = df["Pourcentage GC"].apply(lambda x: "Riche" if x > 55 else "Moyen" if 45 < x <55 else "Faible")
-print(df,"\n\n")
+#4) Ajouter une nouvelle colonne avec des calculs  
+print("****************Ajoute d'une nouvelle colonne***************") 
+# Ajouter une nouvelle colonne"Catégorie GC" 
+df["Catégorie GC"] = df["Pourcentage GC"].apply(lambda x: "Riche" if x > 55 else "Moyen" if 45 < x <55 else "Faible") 
+print(df,"\n\n") 
 
-#5) Ajouter une colonne comptant les 'G' 
-df["Nombre de G"] = df["Séquence"].str.count ("G") 
-print("===== Nombre de G ajoutés =====") 
-print (df,"\n\n")
+#5) Ajouter une colonne comptant les 'G'  
+df["Nombre de G"] = df["Séquence"].str.count ("G")  
+print("===== Nombre de G ajoutés =====")  
+print (df,"\n\n") 
 
- #6) Calculer l'écart type de pourcentage GC et de longueur
-écarttype_ gc = df["pourcentage GC"].std()
-écartype_long = df["Longueur"].std()
-print ("===== Écart type =====")
+ #6) Calculer l'écart type de pourcentage GC et de longueur 
+écarttype_ gc = df["pourcentage GC"].std() 
+écartype_long = df["Longueur"].std() 
+print ("===== Écart type =====") 
 print("Écart type de pourcentage GC:", écarttype_gc)
-print("Écart type de longueur:", écarttype_long)
-print (df,"n\n")
+print("Écart type de longueur:", écarttype_long) 
+print (df,"n\n") 
 
-#7) Sauvegarde et chargement des données avec pandas
-#Sauvgarder le DataFrame dans un fichier cvs
-df.to_cvs("tableau_séquence.cvs", index=False)
+#7) Sauvegarde et chargement des données avec pandas 
+#Sauvgarder le DataFrame dans un fichier cvs 
+df.to_cvs("tableau_séquence.cvs", index=False) 
