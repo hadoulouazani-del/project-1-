@@ -22,7 +22,7 @@ df = pd.DataFrame(data)
 print("****************Création et affichage****************")
 
 # Affichage du tableau 
-print ("Tableau des séquences ADN:")
+print ("Tableau des séquences ADN:") 
 print(df,"\n\n")
 
 #Opérations sur les tableaux :
